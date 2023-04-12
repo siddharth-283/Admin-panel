@@ -13,9 +13,9 @@ function App() {
           <Route path="/">
             <Route index element={<Home/>}/>
             <Route path="login" element={<Login />} />
-            <Route path='products'>
+            <Route path='users'>
               <Route index element={<List/>}/>
-              <Route path=":product" element={<Single/>}/>
+              <Route path=":user" element={<Single/>}/>
               <Route path="new" element={<New/>}/>
             </Route>
           </Route>
