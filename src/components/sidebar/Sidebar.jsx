@@ -1,47 +1,53 @@
-import "./Sidebar.scss"
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import StoreIcon from '@mui/icons-material/Store';
-import CreditCardIcon from '@mui/icons-material/CreditCard';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
-import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
-import InsertChartIcon from '@mui/icons-material/InsertChart';
-import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
-import SettingsSystemDaydreamOutlinedIcon from '@mui/icons-material/SettingsSystemDaydreamOutlined';
-import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
-import SettingsApplicationsOutlinedIcon from '@mui/icons-material/SettingsApplicationsOutlined';
-import PortraitOutlinedIcon from '@mui/icons-material/PortraitOutlined';
-import LogoutIcon from '@mui/icons-material/Logout';
-
+import "./Sidebar.scss";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import StoreIcon from "@mui/icons-material/Store";
+import CreditCardIcon from "@mui/icons-material/CreditCard";
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
+import InsertChartIcon from "@mui/icons-material/InsertChart";
+import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
+import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSystemDaydreamOutlined";
+import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
+import SettingsApplicationsOutlinedIcon from "@mui/icons-material/SettingsApplicationsOutlined";
+import PortraitOutlinedIcon from "@mui/icons-material/PortraitOutlined";
+import LogoutIcon from "@mui/icons-material/Logout";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <div className='sidebar'>
+    <div className="sidebar">
       <div className="top">
-        <span className="logo">Lamadmin</span>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <span className="logo">Lamadmin</span>
+        </Link>
       </div>
-
       <hr />
-
       <div className="center">
         <ul>
           <p className="title">MAIN</p>
-          
+
+          <Link to="/" style={{textDecoration:"none"}}>
           <li>
             <DashboardIcon className="icone" />
             <span>Dashboard</span>
           </li>
-          
+        </Link>
+
           <p className="title">List</p>
 
-          <li>
-            <StoreIcon className="icone" />
-            <span>Users</span>
-          </li>
+          <Link to="/users" style={{ textDecoration: "none" }}>
+            <li>
+              <StoreIcon className="icone" />
+              <span>Users</span>
+            </li>
+          </Link>
 
+          <Link to="/products" style={{textDecoration:"none"}}>
           <li>
             <PersonOutlineIcon className="icone" />
             <span>Product</span>
           </li>
+        </Link>
 
           <li>
             <CreditCardIcon className="icone" />
@@ -66,7 +72,7 @@ const Sidebar = () => {
           </li>
 
           <p className="title">Servics</p>
-          
+
           <li>
             <SettingsSystemDaydreamOutlinedIcon className="icone" />
             <span>System Health</span>
@@ -93,17 +99,15 @@ const Sidebar = () => {
             <LogoutIcon className="icone" />
             <span>Logout</span>
           </li>
-
         </ul>
       </div>
 
       <div className="bottom ">
         <div className="colourOption"></div>
         <div className="colourOption"></div>
-
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
